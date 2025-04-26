@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Meus Produtos Recomendados</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    .product-card {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .product-card img {
+      width: 100%;
+      height: auto;
+    }
+    .product-card h3 {
+      font-size: 1.2em;
+      margin: 15px;
+    }
+    .product-card a {
+      text-decoration: none;
+      background-color: #ff9900;
+      color: #fff;
+      padding: 10px 15px;
+      margin: 15px;
+      border-radius: 5px;
+      text-align: center;
+      display: block;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .product-card a:hover {
+      background-color: #e68a00;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Meus Produtos Recomendados</h1>
+</header>
+
+<div class="container">
+  <div class="product-card">
+    <img src="LINK_DA_IMAGEM_DO_PRODUTO" alt="Nome do Produto">
+    <h3>Nome do Produto</h3>
+    <a href="SEU_LINK_AFILIADO" target="_blank">Ver na Amazon</a>
+  </div>
+  
+  <!-- Você pode copiar e colar mais .product-card para adicionar mais produtos -->
+  
+</div>
+
+</body>
+</html>
