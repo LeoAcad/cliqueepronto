@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Minhas Recomendações</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
     * {
       margin: 0;
@@ -13,7 +14,7 @@
     }
     body {
       font-family: 'Poppins', sans-serif;
-      background: #f2f2f2;
+      background: #f8f9fa;
       color: #333;
       line-height: 1.6;
     }
@@ -23,8 +24,9 @@
       padding: 30px 20px;
       text-align: center;
       font-size: 2em;
-      font-weight: 600;
+      font-weight: 700;
       box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      letter-spacing: 1px;
     }
     .container {
       display: grid;
@@ -40,13 +42,25 @@
       overflow: hidden;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       transition: transform 0.3s, box-shadow 0.3s;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      position: relative;
+      animation: fadeInUp 0.8s ease forwards;
+      opacity: 0;
     }
     .product-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    .badge {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background: #e53935;
+      color: #fff;
+      padding: 5px 10px;
+      font-size: 0.75em;
+      border-radius: 5px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
     }
     .product-card img {
       width: 100%;
@@ -56,6 +70,8 @@
     .product-card h3 {
       font-size: 1.2em;
       margin: 20px;
+      text-align: center;
+      min-height: 60px;
     }
     .product-card a {
       margin: 20px;
@@ -67,6 +83,11 @@
       text-decoration: none;
       font-weight: 600;
       transition: background 0.3s;
+      display: block;
+      font-size: 1em;
+    }
+    .product-card a i {
+      margin-right: 8px;
     }
     .product-card a:hover {
       background: #e68a00;
@@ -78,33 +99,49 @@
       color: #777;
       margin-top: 40px;
     }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
   </style>
 </head>
 <body>
 
 <header>
-  Meus Produtos Favoritos
+  ⭐ Meus Produtos Favoritos ⭐
 </header>
 
 <div class="container">
   <!-- Exemplo de Produto -->
-<div class="product-card">
-    <img src="https://m.media-amazon.com/images/I/61x4XUF8zvL._SL1360_.jpg">
+  <div class="product-card">
+    <div class="badge">Mais Vendido</div>
+    <img src="https://m.media-amazon.com/images/I/61x4XUF8zvL._SL1360_.jpg" alt="Quem Pensa Enriquece - o Legado: o Legado Capa comum – Edição padrão">
     <h3>Quem Pensa Enriquece - o Legado: o Legado Capa comum – Edição padrão</h3>
-    <a href="https://www.amazon.com.br/dp/8568014542/?coliid=I3I1IV2XAMSN6I&colid=3EI5NKDDCA00E&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it" target="_blank">Ver na Amazon</a>
+    <a href="https://www.amazon.com.br/dp/8568014542/?coliid=I3I1IV2XAMSN6I&colid=3EI5NKDDCA00E&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it" target="_blank">
+      <i class="fas fa-shopping-cart"></i> Ver na Amazon
+    </a>
   </div>
 
-   <div class="product-card">
-    <img src="https://m.media-amazon.com/images/I/81eT2pjx4jL._SL1500_.jpg">
-    <h3>Hábitos Atômicos: um Método Fácil e Comprovado de Criar Bons Hábitos e se Livrar dos Maus- Idioma ‏ : ‎ Português</h3>
-    <a href="https://www.amazon.com.br/dp/8550807567/?coliid=IBWWLDHTMZPCH&colid=3EI5NKDDCA00E&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it">Ver na Amazon</a>
+  <!-- Mais produtos -->
+  <div class="product-card">
+    <div class="badge">Oferta!</div>
+    <img src="https://m.media-amazon.com/images/I/81eT2pjx4jL._SL1500_.jpg" alt="Hábitos Atômicos: um Método Fácil e Comprovado de Criar Bons Hábitos e se Livrar dos Maus">
+    <h3>Hábitos Atômicos: um Método Fácil e Comprovado de Criar Bons Hábitos e se Livrar dos Maus</h3>
+    <a href="https://www.amazon.com.br/dp/8550807567/?coliid=IBWWLDHTMZPCH&colid=3EI5NKDDCA00E&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it" target="_blank">
+      <i class="fas fa-shopping-cart"></i> Ver na Amazon
+    </a>
   </div>
 
-  <!-- Mais produtos aqui -->
 </div>
 
 <footer>
-  Página feita com ❤️ | Seus links de afiliado
+  Feito com ❤️ para você | Página de Afiliado
 </footer>
 
 </body>
