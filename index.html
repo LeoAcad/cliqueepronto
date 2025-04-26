@@ -3,68 +3,92 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Meus Produtos Recomendados</title>
+  <title>Minhas Recomendações</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f2f2f2;
+      color: #333;
+      line-height: 1.6;
     }
     header {
-      background-color: #333;
-      color: #fff;
-      padding: 20px;
+      background: linear-gradient(135deg, #4CAF50, #2E7D32);
+      color: white;
+      padding: 30px 20px;
       text-align: center;
+      font-size: 2em;
+      font-weight: 600;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
     }
     .container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
     }
     .product-card {
       background: #fff;
-      border-radius: 10px;
+      border-radius: 15px;
       overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
     .product-card img {
       width: 100%;
-      height: auto;
+      height: 250px;
+      object-fit: cover;
     }
     .product-card h3 {
       font-size: 1.2em;
-      margin: 15px;
+      margin: 20px;
     }
     .product-card a {
-      text-decoration: none;
-      background-color: #ff9900;
-      color: #fff;
-      padding: 10px 15px;
-      margin: 15px;
-      border-radius: 5px;
+      margin: 20px;
+      padding: 12px;
+      background: #ff9900;
+      color: white;
       text-align: center;
-      display: block;
-      font-weight: bold;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
       transition: background 0.3s;
     }
     .product-card a:hover {
-      background-color: #e68a00;
+      background: #e68a00;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #777;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>Meus Produtos Recomendados</h1>
+  Meus Produtos Favoritos
 </header>
 
 <div class="container">
-  <div class="product-card">
+  <!-- Exemplo de Produto -->
+<div class="product-card">
     <img src="https://m.media-amazon.com/images/I/61x4XUF8zvL._SL1360_.jpg">
     <h3>Quem Pensa Enriquece - o Legado: o Legado Capa comum – Edição padrão</h3>
     <a href="https://www.amazon.com.br/dp/8568014542/?coliid=I3I1IV2XAMSN6I&colid=3EI5NKDDCA00E&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it" target="_blank">Ver na Amazon</a>
@@ -76,10 +100,12 @@
     <a href="https://www.amazon.com.br/dp/8550807567/?coliid=IBWWLDHTMZPCH&colid=3EI5NKDDCA00E&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it">Ver na Amazon</a>
   </div>
 
- 
-  <!-- Você pode copiar e colar mais .product-card para adicionar mais produtos -->
-  
+  <!-- Mais produtos aqui -->
 </div>
+
+<footer>
+  Página feita com ❤️ | Seus links de afiliado
+</footer>
 
 </body>
 </html>
