@@ -3,45 +3,57 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Livros - Minhas Recomendações</title>
+  <title>Livros - Meu Site de Afiliados</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    /* Mesmo estilo dos outros */
-    body { font-family: 'Poppins', sans-serif; padding: 20px; background: #f8f9fa; }
-    h1 { text-align: center; color: #4CAF50; margin-bottom: 40px; }
-    .container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-      max-width: 1200px;
-      margin: auto;
-    }
-    .product-card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s; }
-    .product-card:hover { transform: translateY(-5px); }
-    .product-card img { width: 100%; height: 250px; object-fit: cover; }
-    .product-card h3 { text-align: center; margin: 20px; }
-    .product-card a { display: block; text-align: center; margin: 20px; padding: 12px; background: #ff9900; color: white; border-radius: 8px; text-decoration: none; font-weight: bold; }
-    .product-card a:hover { background: #e68a00; }
-  </style>
+  <link rel="stylesheet" href="style.css"> <!-- Usando o mesmo CSS do index.html -->
 </head>
 <body>
 
-<h1>Livros</h1>
-
-<div class="container">
-  <div class="product-card">
-    <img src="https://m.media-amazon.com/images/I/61x4XUF8zvL._SL1360_.jpg" alt="Quem Pensa Enriquece - o Legado: o Legado Capa comum – Edição padrão">
-    <h3>Quem Pensa Enriquece - o Legado</h3>
-    <a href="https://www.amazon.com.br/dp/8568014542/?coliid=I3I1IV2XAMSN6I&colid=3EI5NKDDCA00E&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it" target="_blank">Ver na Amazon</a>
+<nav class="navbar">
+  <div><a href="index.html">🏠 Home</a></div>
+  <div class="menu">
+    <div class="dropdown">
+      <a href="#">Produtos</a>
+      <div class="dropdown-content">
+        <a href="eletronicos.html">💻 Eletrônicos</a>
+        <a href="livros.html">📚 Livros</a>
+        <a href="casa.html">🏠 Casa</a>
+        <a href="moda.html">👗 Moda</a>
+        <a href="beleza.html">💄 Beleza</a>
+      </div>
+    </div>
   </div>
+</nav>
 
-   <div class="product-card">
-    <img src="https://m.media-amazon.com/images/I/81eT2pjx4jL._SL1500_.jpg" alt="Hábitos Atômicos: um Método Fácil e Comprovado de Criar Bons Hábitos e se Livrar dos Maus">
-    <h3>Hábitos Atômicos</h3>
-    <a href="https://www.amazon.com.br/dp/8550807567/?coliid=IBWWLDHTMZPCH&colid=3EI5NKDDCA00E&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it" target="_blank">Ver na Amazon</a>
+<section class="hero">
+  <h1>Livros em Destaque</h1>
+  <p>Descubra ótimas leituras que recomendamos para você!</p>
+</section>
+
+<section class="produtos">
+  <div class="produtos-container">
+
+    <div class="produto">
+      <img src="https://m.media-amazon.com/images/I/81MiLZodUXL._SY466_.jpg" alt="Os Segredos da Mente Milionária">
+      <h3>Os Segredos da Mente Milionária</h3>
+      <a href="https://www.amazon.com.br/dp/8568014542/?coliid=I3I1IV2XAMSN6I&colid=3EI5NKDDCA00E&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it" target="_blank">Ver na Amazon</a>
+    </div>
+
+    <div class="produto">
+      <img src="https://m.media-amazon.com/images/I/81O-dV3D1bL._SY466_.jpg" alt="A Psicologia Financeira">
+      <h3>A Psicologia Financeira</h3>
+      <a href="https://www.amazon.com.br/dp/8550807567/?coliid=IBWWLDHTMZPCH&colid=3EI5NKDDCA00E&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it" target="_blank">Ver na Amazon</a>
+    </div>
+
   </div>
-  
-</div>
+</section>
 
+<a href="#" class="topo">🔝</a>
+
+<footer>
+  <p>© 2025 Meu Site de Afiliados | <a href="https://www.instagram.com/seuusuario" target="_blank">Instagram</a></p>
+</footer>
+
+<script src="script.js"></script> <!-- JS igual ao index para menu e botão -->
 </body>
 </html>
