@@ -7,6 +7,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
+    html {
+      scroll-behavior: smooth; /* Rolagem suave */
+    }
     * {
       margin: 0;
       padding: 0;
@@ -53,6 +56,15 @@
       color: #ffd700;
     }
 
+    header {
+      background: linear-gradient(135deg, #4CAF50, #2E7D32);
+      color: white;
+      padding: 80px 20px 40px 20px;
+      text-align: center;
+      font-size: 2em;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
     .container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -117,6 +129,16 @@
     .product-card a:hover {
       background: #e68a00;
     }
+
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    section#contato {
+      background: #e0f7fa;
+    }
+
     footer {
       text-align: center;
       padding: 20px;
@@ -134,6 +156,23 @@
         transform: translateY(0);
       }
     }
+    .topo {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #4CAF50;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 50%;
+      font-size: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      cursor: pointer;
+      transition: background 0.3s;
+      z-index: 1000;
+    }
+    .topo:hover {
+      background: #2E7D32;
+    }
   </style>
 </head>
 <body>
@@ -141,18 +180,22 @@
 <nav>
   <div class="logo">Meus Produtos</div>
   <ul>
-    <li><a href="#">Home</a></li>
+    <li><a href="#home">Home</a></li>
     <li><a href="#produtos">Produtos</a></li>
     <li><a href="#contato">Contato</a></li>
   </ul>
 </nav>
+
+<header id="home">
+  Bem-vindo(a) à minha seleção especial! 🚀
+</header>
 
 <section id="produtos" class="container">
   <!-- Produto 1 -->
   <div class="product-card">
     <div class="badge">Mais Vendido</div>
     <img src="https://m.media-amazon.com/images/I/61x4XUF8zvL._SL1360_.jpg" alt="Quem Pensa Enriquece - o Legado: o Legado Capa comum – Edição padrão">
-    <h3>Quem Pensa Enriquece - o Legado: o Legado Capa comum – Edição padrão</h3>
+    <h3>Quem Pensa Enriquece</h3>
     <a href="https://www.amazon.com.br/dp/8568014542/?coliid=I3I1IV2XAMSN6I&colid=3EI5NKDDCA00E&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it" target="_blank">
       <i class="fas fa-shopping-cart"></i> Ver na Amazon
     </a>
@@ -168,12 +211,20 @@
     </a>
   </div>
 
+  <!-- Adicione mais produtos aqui! -->
 </section>
 
-<footer id="contato">
-  <p>Entre em contato: seuemail@email.com</p>
-  <p>Feito com ❤️ para você | Página de Afiliado</p>
+<section id="contato">
+  <h2>Entre em Contato</h2>
+  <p>Tem alguma dúvida ou sugestão? Fale comigo!</p>
+  <p>Email: <a href="mailto:seuemail@email.com">seuemail@email.com</a></p>
+</section>
+
+<footer>
+  Feito com ❤️ para você | Página de Afiliado
 </footer>
+
+<a href="#home" class="topo"><i class="fas fa-arrow-up"></i></a>
 
 </body>
 </html>
