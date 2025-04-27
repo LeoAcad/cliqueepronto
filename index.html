@@ -8,7 +8,7 @@
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
     html {
-      scroll-behavior: smooth; /* Rolagem suave */
+      scroll-behavior: smooth;
     }
     * {
       margin: 0;
@@ -20,7 +20,7 @@
       background: #f8f9fa;
       color: #333;
       line-height: 1.6;
-      padding-top: 80px; /* espaço pro menu fixo */
+      padding-top: 80px;
     }
     nav {
       background: #4CAF50;
@@ -42,9 +42,12 @@
     nav ul {
       list-style: none;
       display: flex;
+      align-items: center;
+      position: relative;
     }
     nav ul li {
       margin-left: 20px;
+      position: relative;
     }
     nav ul li a {
       text-decoration: none;
@@ -55,6 +58,30 @@
     nav ul li a:hover {
       color: #ffd700;
     }
+    nav ul li ul {
+      display: none;
+      position: absolute;
+      top: 40px;
+      left: 0;
+      background: #4CAF50;
+      border-radius: 5px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    nav ul li:hover ul {
+      display: block;
+    }
+    nav ul li ul li {
+      margin: 0;
+    }
+    nav ul li ul li a {
+      display: block;
+      padding: 10px 20px;
+      white-space: nowrap;
+    }
+    nav ul li ul li a:hover {
+      background: #388e3c;
+    }
 
     header {
       background: linear-gradient(135deg, #4CAF50, #2E7D32);
@@ -64,70 +91,6 @@
       font-size: 2em;
       font-weight: 700;
       letter-spacing: 1px;
-    }
-    .container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-      padding: 40px 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
-    .product-card {
-      background: #fff;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s, box-shadow 0.3s;
-      position: relative;
-      animation: fadeInUp 0.8s ease forwards;
-      opacity: 0;
-    }
-    .product-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    }
-    .badge {
-      position: absolute;
-      top: 15px;
-      left: 15px;
-      background: #e53935;
-      color: #fff;
-      padding: 5px 10px;
-      font-size: 0.75em;
-      border-radius: 5px;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-    }
-    .product-card img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-    }
-    .product-card h3 {
-      font-size: 1.2em;
-      margin: 20px;
-      text-align: center;
-      min-height: 60px;
-    }
-    .product-card a {
-      margin: 20px;
-      padding: 12px;
-      background: #ff9900;
-      color: white;
-      text-align: center;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: background 0.3s;
-      display: block;
-      font-size: 1em;
-    }
-    .product-card a i {
-      margin-right: 8px;
-    }
-    .product-card a:hover {
-      background: #e68a00;
     }
 
     section {
@@ -146,16 +109,7 @@
       color: #777;
       margin-top: 40px;
     }
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+
     .topo {
       position: fixed;
       bottom: 30px;
@@ -178,10 +132,20 @@
 <body>
 
 <nav>
-  <div class="logo">Meus Produtos</div>
+  <div class="logo">Minhas Recomendações</div>
   <ul>
     <li><a href="#home">Home</a></li>
-    <li><a href="#produtos">Produtos</a></li>
+    <li>
+      <a href="#">Produtos ▾</a>
+      <ul>
+        <li><a href="eletronicos.html">Eletrônicos</a></li>
+        <li><a href="livros.html">Livros</a></li>
+        <li><a href="casa.html">Casa & Cozinha</a></li>
+        <li><a href="beleza.html">Beleza</a></li>
+        <li><a href="moda.html">Moda</a></li>
+              
+      </ul>
+    </li>
     <li><a href="#contato">Contato</a></li>
   </ul>
 </nav>
@@ -190,34 +154,10 @@
   Bem-vindo(a) à minha seleção especial! 🚀
 </header>
 
-<section id="produtos" class="container">
-  <!-- Produto 1 -->
-  <div class="product-card">
-    <div class="badge">Mais Vendido</div>
-    <img src="https://m.media-amazon.com/images/I/61x4XUF8zvL._SL1360_.jpg" alt="Quem Pensa Enriquece - o Legado: o Legado Capa comum – Edição padrão">
-    <h3>Quem Pensa Enriquece</h3>
-    <a href="https://www.amazon.com.br/dp/8568014542/?coliid=I3I1IV2XAMSN6I&colid=3EI5NKDDCA00E&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it" target="_blank">
-      <i class="fas fa-shopping-cart"></i> Ver na Amazon
-    </a>
-  </div>
-
-  <!-- Produto 2 -->
-  <div class="product-card">
-    <div class="badge">Oferta!</div>
-    <img src="https://m.media-amazon.com/images/I/81eT2pjx4jL._SL1500_.jpg" alt="Hábitos Atômicos: um Método Fácil e Comprovado de Criar Bons Hábitos e se Livrar dos Maus">
-    <h3>Hábitos Atômicos</h3>
-    <a href="https://www.amazon.com.br/dp/8550807567/?coliid=IBWWLDHTMZPCH&colid=3EI5NKDDCA00E&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it" target="_blank">
-      <i class="fas fa-shopping-cart"></i> Ver na Amazon
-    </a>
-  </div>
-
-  <!-- Adicione mais produtos aqui! -->
-</section>
-
 <section id="contato">
   <h2>Entre em Contato</h2>
   <p>Tem alguma dúvida ou sugestão? Fale comigo!</p>
-  <p>Email: <a href="mailto:seuemail@email.com">seuemail@email.com</a></p>
+  <p>Instagram: <a href="mailto:seuemail@email.com">seuemail@email.com</a></p>
 </section>
 
 <footer>
