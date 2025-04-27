@@ -2,349 +2,55 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Meu Site de Afiliados</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    body, html {
-      margin: 0;
-      padding: 0;
-      font-family: 'Poppins', sans-serif;
-      background: #f8f9fa;
-      scroll-behavior: smooth;
-    }
-    
-    /* Loader */
-    #loader {
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      background: white;
-      z-index: 10000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .spinner {
-      border: 6px solid #ccc;
-      border-top: 6px solid #4CAF50;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      animation: spin 1s linear infinite;
-    }
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-
-    /* Navbar */
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 30px;
-      width: calc(100% - 60px);
-      position: fixed;
-      top: 0;
-      z-index: 999;
-      background: transparent;
-      transition: background 0.3s, box-shadow 0.3s;
-      box-sizing: border-box;
-    }
-    .navbar.scrolled {
-      background: #4CAF50;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    }
-    .navbar a {
-      color: white;
-      text-decoration: none;
-      padding: 10px;
-      font-weight: bold;
-    }
-    .navbar .menu {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      position: relative;
-    }
-    .dropdown {
-      position: relative;
-    }
-    .dropdown > a::after {
-      content: ' ▼';
-    }
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      top: 40px;
-      right: 0;
-      background-color: white;
-      min-width: 200px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      border-radius: 8px;
-      overflow: hidden;
-      flex-direction: column;
-      animation: fadeIn 0.3s ease forwards;
-      z-index: 1000;
-    }
-    .dropdown:hover .dropdown-content {
-      display: flex;
-    }
-    .dropdown-content a {
-      color: #4CAF50;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 600;
-    }
-    .dropdown-content a:hover {
-      background-color: #f1f1f1;
-    }
-
-    @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(-10px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
-
-    /* Hero */
-    .hero {
-      padding-top: 120px;
-      text-align: center;
-      padding: 150px 20px 50px;
-    }
-    .hero h1 {
-      font-size: 48px;
-      margin-bottom: 20px;
-      color: #333;
-    }
-    .hero p {
-      font-size: 20px;
-      color: #555;
-    }
-    .btn {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 12px 24px;
-      background: #ff9900;
-      color: white;
-      font-weight: bold;
-      border-radius: 30px;
-      text-decoration: none;
-      transition: background 0.3s;
-    }
-    .btn:hover {
-      background: #e68a00;
-    }
-
-    /* Slider */
-    .slider {
-      margin: 40px auto;
-      max-width: 1200px;
-      position: relative;
-      overflow: hidden;
-      border-radius: 20px;
-    }
-    .slides {
-      display: flex;
-      width: 500%;
-      animation: slide 12s infinite;
-    }
-    .slides img {
-      width: 100%;
-      height: auto;
-    }
-    @keyframes slide {
-      0% {margin-left: 0%;}
-      20% {margin-left: 0%;}
-      25% {margin-left: -100%;}
-      45% {margin-left: -100%;}
-      50% {margin-left: -200%;}
-      70% {margin-left: -200%;}
-      75% {margin-left: -300%;}
-      95% {margin-left: -300%;}
-      100% {margin-left: -400%;}
-    }
-
-    /* Produtos */
-    .produtos {
-      padding: 50px 20px;
-      text-align: center;
-      background: #fff;
-    }
-    .produtos h2 {
-      font-size: 36px;
-      margin-bottom: 40px;
-      color: #333;
-    }
-    .produtos-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .produto {
-      background: #f1f1f1;
-      border-radius: 10px;
-      padding: 20px;
-      transition: transform 0.3s;
-    }
-    .produto:hover {
-      transform: translateY(-5px);
-    }
-    .produto img {
-      max-width: 100%;
-      border-radius: 8px;
-    }
-    .produto h3 {
-      margin: 15px 0 10px;
-      font-size: 22px;
-      color: #333;
-    }
-    .produto a {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 10px 20px;
-      background: #4CAF50;
-      color: white;
-      text-decoration: none;
-      border-radius: 20px;
-      font-weight: bold;
-    }
-    .produto a:hover {
-      background: #45a049;
-    }
-
-    /* Botão Voltar ao Topo */
-    .topo {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #4CAF50;
-      color: white;
-      padding: 10px 15px;
-      border-radius: 50%;
-      text-decoration: none;
-      font-size: 20px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-      display: none;
-      z-index: 1000;
-    }
-    .topo.show {
-      display: block;
-    }
-
-    /* Rodapé */
-    footer {
-      background: #333;
-      color: white;
-      text-align: center;
-      padding: 20px 10px;
-      margin-top: 50px;
-    }
-    footer a {
-      color: #4CAF50;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    footer a:hover {
-      text-decoration: underline;
-    }
-  </style>
-
-  <script>
-    window.addEventListener('scroll', function() {
-      const navbar = document.querySelector('.navbar');
-      navbar.classList.toggle('scrolled', window.scrollY > 50);
-
-      const topo = document.querySelector('.topo');
-      if (window.scrollY > 300) {
-        topo.classList.add('show');
-      } else {
-        topo.classList.remove('show');
-      }
-    });
-
-    window.addEventListener('load', function(){
-      document.getElementById('loader').style.display = 'none';
-    });
-  </script>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home | Meu Site de Afiliados</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!-- Loader -->
-<div id="loader">
-  <div class="spinner"></div>
-</div>
-
-<!-- Menu -->
-<nav class="navbar">
-  <div><a href="index.html">🏠 Home</a></div>
-  <div class="menu">
+  <nav class="navbar">
+    <a href="index.html">Home</a>
     <div class="dropdown">
-      <a href="#">Produtos</a>
+      <a href="#">Categorias ▾</a>
       <div class="dropdown-content">
-        <a href="eletronicos.html">💻 Eletrônicos</a>
-        <a href="livros.html">📚 Livros</a>
-        <a href="casa.html">🏠 Casa</a>
-        <a href="moda.html">👗 Moda</a>
-        <a href="beleza.html">💄 Beleza</a>
+        <a href="livros.html">Livros</a>
+        <a href="eletronicos.html">Eletrônicos</a>
+        <a href="casa.html">Casa</a>
+        <a href="moda.html">Moda</a>
+        <a href="beleza.html">Beleza</a>
       </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
-<!-- Hero -->
-<section class="hero">
-  <h1>Bem-vindo ao Meu Site de Afiliados</h1>
-  <p>As melhores recomendações de produtos pra você!</p>
-  <a href="#produtos" class="btn">Ver Produtos</a>
-</section>
+  <section class="hero">
+    <h1>Bem-vindo ao meu site de afiliados</h1>
+    <p>Conheça produtos incríveis organizados por categorias!</p>
+  </section>
 
-<!-- Slider -->
-<div class="slider">
-  <div class="slides">
-    <img src="https://via.placeholder.com/1200x400?text=Banner+1" alt="Banner 1">
-    <img src="https://via.placeholder.com/1200x400?text=Banner+2" alt="Banner 2">
-    <img src="https://via.placeholder.com/1200x400?text=Banner+3" alt="Banner 3">
-    <img src="https://via.placeholder.com/1200x400?text=Banner+4" alt="Banner 4">
-    <img src="https://via.placeholder.com/1200x400?text=Banner+5" alt="Banner 5">
-  </div>
-</div>
+  <section class="produtos">
+    <div class="produtos-container">
 
-<!-- Produtos -->
-<section id="produtos" class="produtos">
-  <h2>Produtos em Destaque</h2>
-  <div class="produtos-container">
-    <div class="produto">
-      <img src="https://via.placeholder.com/250x200.png?text=Produto+1" alt="Produto 1">
-      <h3>Produto Incrível 1</h3>
-      <a href="#">Ver na Amazon</a>
+      <div class="produto">
+        <img src="https://via.placeholder.com/250x250.png?text=Produto+1" alt="Produto Destaque 1">
+        <h3>Produto Incrível 1</h3>
+        <a href="#">Comprar</a>
+      </div>
+
+      <div class="produto">
+        <img src="https://via.placeholder.com/250x250.png?text=Produto+2" alt="Produto Destaque 2">
+        <h3>Produto Incrível 2</h3>
+        <a href="#">Comprar</a>
+      </div>
+
     </div>
-    <div class="produto">
-      <img src="https://via.placeholder.com/250x200.png?text=Produto+2" alt="Produto 2">
-      <h3>Produto Incrível 2</h3>
-      <a href="#">Ver na Amazon</a>
-    </div>
-    <div class="produto">
-      <img src="https://via.placeholder.com/250x200.png?text=Produto+3" alt="Produto 3">
-      <h3>Produto Incrível 3</h3>
-      <a href="#">Ver na Amazon</a>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- Botão Voltar ao Topo -->
-<a href="#" class="topo">🔝</a>
+  <a href="#" class="topo">↑</a>
 
-<!-- Rodapé -->
-<footer>
-  <p>© 2025 Meu Site de Afiliados | <a href="https://www.instagram.com/seuusuario" target="_blank">Instagram</a></p>
-</footer>
+  <footer>
+    <p>Me siga no <a href="https://instagram.com/seuperfil" target="_blank">Instagram</a>!</p>
+  </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
