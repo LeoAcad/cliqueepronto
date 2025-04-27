@@ -3,168 +3,129 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Minhas Recomendações</title>
+  <title>Meu Site de Afiliados</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
     body {
+      margin: 0;
       font-family: 'Poppins', sans-serif;
       background: #f8f9fa;
-      color: #333;
-      line-height: 1.6;
-      padding-top: 80px;
     }
-    nav {
+    /* MENU */
+    .navbar {
       background: #4CAF50;
-      color: white;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 15px 30px;
+      padding: 10px 30px;
       position: fixed;
-      top: 0;
       width: 100%;
-      z-index: 1000;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     }
-    nav .logo {
-      font-size: 1.5em;
-      font-weight: 700;
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      padding: 10px;
+      font-weight: bold;
     }
-    nav ul {
-      list-style: none;
+    .navbar .menu {
       display: flex;
       align-items: center;
+      gap: 20px;
+    }
+    .dropdown {
       position: relative;
     }
-    nav ul li {
-      margin-left: 20px;
-      position: relative;
-    }
-    nav ul li a {
-      text-decoration: none;
-      color: white;
-      font-weight: 600;
-      transition: color 0.3s;
-    }
-    nav ul li a:hover {
-      color: #ffd700;
-    }
-    nav ul li ul {
+    .dropdown-content {
       display: none;
       position: absolute;
       top: 40px;
-      left: 0;
-      background: #4CAF50;
-      border-radius: 5px;
+      background-color: white;
+      min-width: 160px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      border-radius: 8px;
       overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
     }
-    nav ul li:hover ul {
+    .dropdown-content a {
+      color: #4CAF50;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      font-weight: 600;
+    }
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+    .dropdown:hover .dropdown-content {
       display: block;
     }
-    nav ul li ul li {
-      margin: 0;
-    }
-    nav ul li ul li a {
-      display: block;
-      padding: 10px 20px;
-      white-space: nowrap;
-    }
-    nav ul li ul li a:hover {
-      background: #388e3c;
-    }
 
-    header {
-      background: linear-gradient(135deg, #4CAF50, #2E7D32);
-      color: white;
-      padding: 80px 20px 40px 20px;
+    /* CORPO DA PÁGINA */
+    .hero {
+      padding-top: 100px;
       text-align: center;
-      font-size: 2em;
-      font-weight: 700;
-      letter-spacing: 1px;
+      padding: 150px 20px 50px;
     }
-
-    section {
-      padding: 60px 20px;
-      text-align: center;
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      color: #333;
     }
-
-    section#contato {
-      background: #e0f7fa;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9em;
-      color: #777;
-      margin-top: 40px;
-    }
-
-    .topo {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background: #4CAF50;
-      color: white;
-      padding: 10px 15px;
-      border-radius: 50%;
+    .hero p {
       font-size: 20px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      cursor: pointer;
-      transition: background 0.3s;
-      z-index: 1000;
+      color: #555;
     }
-    .topo:hover {
-      background: #2E7D32;
+    .btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 24px;
+      background: #ff9900;
+      color: white;
+      font-weight: bold;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #e68a00;
     }
   </style>
 </head>
+
 <body>
 
-<nav>
-  <div class="logo">Minhas Recomendações</div>
-  <ul>
-    <li><a href="#home">Home</a></li>
-    <li>
-      <a href="#">Produtos ▾</a>
-      <ul>
-        <li><a href="eletronicos.html">Eletrônicos</a></li>
-        <li><a href="livros.html">Livros</a></li>
-        <li><a href="casa.html">Casa & Cozinha</a></li>
-        <li><a href="beleza.html">Beleza</a></li>
-        <li><a href="moda.html">Moda</a></li>
-              
-      </ul>
-    </li>
-    <li><a href="#contato">Contato</a></li>
-  </ul>
+<!-- MENU FIXO COM DROPDOWN -->
+<nav class="navbar">
+  <div><a href="index.html">🏠 Home</a></div>
+  <div class="menu">
+    <div class="dropdown">
+      <a href="#">Produtos ▼</a>
+      <div class="dropdown-content">
+        <a href="eletronicos.html">Eletrônicos</a>
+        <a href="livros.html">Livros</a>
+        <a href="casa.html">Casa</a>
+        <a href="moda.html">Moda</a>
+        <a href="beleza.html">Beleza</a>
+      </div>
+    </div>
+    <a href="#contato">Contato</a>
+  </div>
 </nav>
 
-<header id="home">
-  Bem-vindo(a) à minha seleção especial! 🚀
-</header>
-
-<section id="contato">
-  <h2>Entre em Contato</h2>
-  <p>Tem alguma dúvida ou sugestão? Fale comigo!</p>
-  <p>Instagram: <a href="mailto:seuemail@email.com">seuemail@email.com</a></p>
+<!-- HERO SECTION -->
+<section class="hero">
+  <h1>Bem-vindo ao Meu Site de Afiliados</h1>
+  <p>Confira as melhores recomendações de produtos selecionados para você!</p>
+  <a href="#produtos" class="btn">Ver Produtos</a>
 </section>
 
-<footer>
-  Feito com ❤️ para você | Página de Afiliado
-</footer>
-
-<a href="#home" class="topo"><i class="fas fa-arrow-up"></i></a>
+<!-- CONTATO -->
+<section id="contato" style="padding: 50px 20px; text-align: center;">
+  <h2>Contato</h2>
+  <p>Entre em contato pelo email: <strong>seuemail@exemplo.com</strong></p>
+</section>
 
 </body>
 </html>
