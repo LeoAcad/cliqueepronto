@@ -91,12 +91,79 @@
     .btn:hover {
       background: #e68a00;
     }
+
+    /* PRODUTOS EM DESTAQUE */
+    .produtos {
+      padding: 50px 20px;
+      text-align: center;
+      background: #fff;
+    }
+    .produtos h2 {
+      font-size: 36px;
+      margin-bottom: 40px;
+      color: #333;
+    }
+    .produtos-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .produto {
+      background: #f1f1f1;
+      border-radius: 10px;
+      padding: 20px;
+      transition: transform 0.3s;
+    }
+    .produto:hover {
+      transform: translateY(-5px);
+    }
+    .produto img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+    .produto h3 {
+      margin: 15px 0 10px;
+      font-size: 22px;
+      color: #333;
+    }
+    .produto a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background: #4CAF50;
+      color: white;
+      text-decoration: none;
+      border-radius: 20px;
+      font-weight: bold;
+    }
+    .produto a:hover {
+      background: #45a049;
+    }
+
+    /* RODAPÉ */
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      margin-top: 50px;
+    }
+    footer a {
+      color: #4CAF50;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 
 <body>
 
-<!-- MENU FIXO COM DROPDOWN -->
+<!-- MENU -->
 <nav class="navbar">
   <div><a href="index.html">🏠 Home</a></div>
   <div class="menu">
@@ -110,7 +177,6 @@
         <a href="beleza.html">Beleza</a>
       </div>
     </div>
-    <a href="#contato">Contato</a>
   </div>
 </nav>
 
@@ -121,11 +187,32 @@
   <a href="#produtos" class="btn">Ver Produtos</a>
 </section>
 
-<!-- CONTATO -->
-<section id="contato" style="padding: 50px 20px; text-align: center;">
-  <h2>Contato</h2>
-  <p>Entre em contato pelo email: <strong>seuemail@exemplo.com</strong></p>
+<!-- PRODUTOS EM DESTAQUE -->
+<section id="produtos" class="produtos">
+  <h2>Produtos em Destaque</h2>
+  <div class="produtos-container">
+    <div class="produto">
+      <img src="https://via.placeholder.com/250x200.png?text=Produto+1" alt="Produto 1">
+      <h3>Produto Incrível 1</h3>
+      <a href="#">Ver na Amazon</a>
+    </div>
+    <div class="produto">
+      <img src="https://via.placeholder.com/250x200.png?text=Produto+2" alt="Produto 2">
+      <h3>Produto Incrível 2</h3>
+      <a href="#">Ver na Amazon</a>
+    </div>
+    <div class="produto">
+      <img src="https://via.placeholder.com/250x200.png?text=Produto+3" alt="Produto 3">
+      <h3>Produto Incrível 3</h3>
+      <a href="#">Ver na Amazon</a>
+    </div>
+  </div>
 </section>
+
+<!-- RODAPÉ -->
+<footer>
+  <p>© 2025 Meu Site de Afiliados | <a href="https://www.instagram.com/seuusuario" target="_blank">Instagram</a></p>
+</footer>
 
 </body>
 </html>
