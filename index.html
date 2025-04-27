@@ -17,17 +17,42 @@
       background: #f8f9fa;
       color: #333;
       line-height: 1.6;
+      padding-top: 80px; /* espaço pro menu fixo */
     }
-    header {
-      background: linear-gradient(135deg, #4CAF50, #2E7D32);
+    nav {
+      background: #4CAF50;
       color: white;
-      padding: 30px 20px;
-      text-align: center;
-      font-size: 2em;
-      font-weight: 700;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
       box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-      letter-spacing: 1px;
     }
+    nav .logo {
+      font-size: 1.5em;
+      font-weight: 700;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+    }
+    nav ul li {
+      margin-left: 20px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {
+      color: #ffd700;
+    }
+
     .container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -113,12 +138,17 @@
 </head>
 <body>
 
-<header>
-  ⭐ Meus Produtos Favoritos ⭐
-</header>
+<nav>
+  <div class="logo">Meus Produtos</div>
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#produtos">Produtos</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+</nav>
 
-<div class="container">
-  <!-- Exemplo de Produto -->
+<section id="produtos" class="container">
+  <!-- Produto 1 -->
   <div class="product-card">
     <div class="badge">Mais Vendido</div>
     <img src="https://m.media-amazon.com/images/I/61x4XUF8zvL._SL1360_.jpg" alt="Quem Pensa Enriquece - o Legado: o Legado Capa comum – Edição padrão">
@@ -128,20 +158,21 @@
     </a>
   </div>
 
-  <!-- Mais produtos -->
+  <!-- Produto 2 -->
   <div class="product-card">
     <div class="badge">Oferta!</div>
     <img src="https://m.media-amazon.com/images/I/81eT2pjx4jL._SL1500_.jpg" alt="Hábitos Atômicos: um Método Fácil e Comprovado de Criar Bons Hábitos e se Livrar dos Maus">
-    <h3>Hábitos Atômicos: um Método Fácil e Comprovado de Criar Bons Hábitos e se Livrar dos Maus</h3>
+    <h3>Hábitos Atômicos</h3>
     <a href="https://www.amazon.com.br/dp/8550807567/?coliid=IBWWLDHTMZPCH&colid=3EI5NKDDCA00E&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it" target="_blank">
       <i class="fas fa-shopping-cart"></i> Ver na Amazon
     </a>
   </div>
 
-</div>
+</section>
 
-<footer>
-  Feito com ❤️ para você | Página de Afiliado
+<footer id="contato">
+  <p>Entre em contato: seuemail@email.com</p>
+  <p>Feito com ❤️ para você | Página de Afiliado</p>
 </footer>
 
 </body>
