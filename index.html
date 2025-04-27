@@ -19,10 +19,11 @@
       align-items: center;
       padding: 10px 30px;
       position: fixed;
-      width: 100%;
+      width: calc(100% - 60px); /* 30px de padding dos dois lados */
       top: 0;
       z-index: 999;
       box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      box-sizing: border-box;
     }
     .navbar a {
       color: white;
@@ -47,6 +48,7 @@
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
       border-radius: 8px;
       overflow: hidden;
+      right: 0;
     }
     .dropdown-content a {
       color: #4CAF50;
