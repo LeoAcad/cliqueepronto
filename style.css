@@ -13,7 +13,7 @@ body {
 
 /* Navbar */
 .navbar {
-  background-color: #ff6600; /* Laranja */
+  background-color: #ff7f00; /* Laranja suavizado */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -71,7 +71,7 @@ body {
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(90deg, #ff6600, #00cc66);
+  background: linear-gradient(90deg, #ff7f00, #00cc66);
   color: white;
   text-align: center;
   padding: 4rem 2rem;
@@ -144,7 +144,7 @@ body {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background: #ff6600;
+  background: #ff7f00;
   color: white;
   padding: 0.8rem;
   border-radius: 50%;
@@ -155,7 +155,7 @@ body {
 
 /* Footer */
 footer {
-  background-color: #ff6600;
+  background-color: #ff7f00;
   color: white;
   text-align: center;
   padding: 1.5rem 1rem;
